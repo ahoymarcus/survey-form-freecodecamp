@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Survey Form</title>
+	
+	<style>
+		* { margin: 0; padding: 0; }
+		
+		.container {
+			display: grid;
+			grid-template-columns: 1.25fr 0.50fr 1.25fr;
+			grid-template-rows: auto 1fr auto;
+			grid-template-areas:
+			"header header header"
+			"main aside aside"
+			"footer footer footer";
+		}
+		
+		main { grid-area: main; background-color: rgb(255, 130, 255); padding: 15px; }
+		aside { grid-area: aside; background-color: rgb(110, 255, 255); padding: 10px; }
+		header { grid-area: header; /*margin-bottom: 40px;*/ background-color: rgb(255, 255, 0); padding: 10px; }
+		footer { grid-area: footer; /*margin-top: 40px;*/ background-color: rgb(255, 255, 0); padding: 10px; }
+		nav { margin-bottom: 15px; }
+		nav ul, footer ul { list-style: none; }
+		
+		h1 { max-width: 820px; text-align: center; padding: 5px; margin: auto; background-color: #ffffffc7;/*white;*/ }
+		main .description-items { color: rgb(113 7 113); background-color: white;/*#ffffffc7;*/ padding: 20px; line-height: 45px; font-size: 25px; text-shadow: 0.5px 0.5px yellow; }
+		main, aside { font-size: 20px; }
+		p#description { font-size: 35px; text-transform: uppercase; text-shadow: 1.5px 1.5px yellow; }
+		
+	  .links-container { display: flex; 		justify-content: space-around; }
+		.submit-container { display: flex; justify-content: space-between; }
+
+		.small-caps {
+			font-variant: small-caps;
+		}
+		em { text-decoration: underline; }
+		.symbol { width: 100px; margin: auto; }
+		.symbol { width: 100px; margin: auto; }
+		
+		/*FORMULÁRIO*/
+		aside #survey-form { margin: auto; }
+		.users { background-color: rgb(0, 255, 255); padding: 20px; } 
+		.languages {  background-color: rgb(0, 255, 255); padding: 20px; }
+		.tasks { background-color: rgb(0, 255, 255); padding: 20px; }
+		
+		legend { font-weight: bold; font-family: "Segoe UI", "Arial", "Times New Roman"; }
+		
+		#survey-form label {  }
+		#survey-form input#name { /*width: 225px;*/ background-color: rgba(255, 255, 0, 0.8); }
+		#survey-form input#email { /*width: 225px;*/ background-color: rgba(255, 255, 0, 0.8) }
+		#survey-form input#number {  background-color: rgba(255, 255, 0, 0.8); }
+		#survey-form input#submit { border-style: dashed; background-color: rgba(255, 255, 0, 0.8); width: 20%; } 
+				
+		#survey-form textarea { background-color: rgba(255, 255, 0, 0.8); width: 70%; }
+		#survey-form select#dropdown { background-color: rgba(255, 255, 0, 0.8); }
+		
+		
+	</style>
+	
+</head>
+<body>
+	<!--https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form-->
+	
+	<div class="container">
+		<header>
+			<nav>
+				<ul class="links-container">
+					<li><a target="_blank" href="https://musica-erudita.netlify.app/">A Música Erudita</a>
+					</li>
+					<li><a target="_blank" href="https://musica-erudita.netlify.app/coral-historico.html">Pequeno Histórico da Música Erudita</a> </li>
+					<li><a target="blank" href="https://musica-erudita.netlify.app/coral-mundo.html">A Música Erudita no Mundo</a></li>
+					<li><a target="_blank" href="https://musica-erudita.netlify.app/coral-brasil.html">A Música Erudita no Brasil</a></li>
+					<li><a target="_blank" href="https://musica-erudita.netlify.app/coral-historico-vozes.html">As Vozes no Coral Sinfônico</a></li>
+				</ul>
+			</nav>
+			
+			<h1 id="title">The Top Most Commonly Used Programming Language!</h1>
+		</header>
+		
+		<main>
+			<div class="description-items">
+				<p id="description">Finding out the favorites programming language on the Web!!!</p>
+				<br /><br />
+				
+				<div class="symbol">
+					<h3>&#10033;&#10033;&#10033;</h3>
+				</div>
+			
+				<br />
+				<p>Let's see if we can find the programming languages that make it all happen:</p>
+				<p>the <em>Top Most Wanted</em> languages, the <em>Top Languages with Higher Salaries</em> or even the most stylest <span class="small-caps">Programming Languagecss</span>....</p>
+				
+			</div>
+		</main>
+			
+		<aside>
+			<form id="survey-form">
+				<fieldset class="users">
+					<legend>Personal information</legend>
+					<label for="name" id="name-label">Your name:</label>
+					<input type="text" id="name" name="name" placeholder="Your name here" required /><br />
+					<br />
+					<label for="email" id="email-label">Your email:</label>
+					<input type="email" id="email" name="email" placeholder="Your email comes here" required /><br />
+				</fieldset>
+				
+				
+				<fieldset class="languages">
+					<legend>Programming languages</legend>
+					<label for="language">Programming languages:</label><br />
+					<input type="radio" id="language" name="language" value="JavaScript" /> JavaScript <br />
+					<input type="radio" id="language" name="language" value="HTML/CSS" /> HTML/CSS <br />
+					<input type="radio" id="language" name="language" value="SQL" /> SQL <br />
+					<input type="radio" id="language" name="language" value="Python" /> Python <br />
+					<input type="radio" id="language" name="language" value="Java" /> Java <br />
+					<input type="radio" id="language" name="language" value="Bash/Shell/PowerShell" /> Bash/Shell/PowerShell <br />
+					<input type="radio" id="language" name="language" value="C++" /> C++ <br />
+					
+					<br />
+					<label for="number" id="number-label">Give a score for your language choice (between 1 and 10):</label>
+					<input type="number" id="number" name="number" min="1" max="10" placeholder="Give your score" />
+				</fieldset>
+				
+				
+				
+				<fieldset class="tasks">
+					<legend>Programming jobs</legend>
+					Choose your favorite programming tasks: (check all that apply)<br />
+					<input type="checkbox" id="Web-Design" name="Web-Design" value="Web-Design" />
+					<label for="Web-Design">Web Design</label> <br />
+					<input type="checkbox" id="Frontend" name="Frontend" value="Frontend" /> 
+					<label for"Frontend">Frontend programming</label><br />
+					<input type="checkbox" id="Backend" name="Backend" value="Backend" />
+					<label for="Backend">Backend programming</label><br />
+					<input type="checkbox" id"Mobile" name="Mobile" value="Mobile" />
+					<label for="Mobile">Mobile programming</label><br />
+					
+					<br />
+					<label for="salaries">Try to guess remunaration associated with the task you choose:</label>
+					<select name="salaries" id="dropdown">
+						<optgroup label="Higher paying tasks">
+							<option value="30000">30000</option>
+							<option value="25000">25000</option>
+							<option value="20000">20000</option>
+						</optgroup>
+						<optgroup label="Lower paying tasks">
+							<option value="15000">15000</option>
+							<option value="10000">10000</option>
+							<option value="5000">5000</option>
+						</optgroup>
+						
+						
+						<option value="" disabled selected hidden>Choose a salary</option>
+					</select>
+				</fieldset>
+						
+				<br />		
+				<div class="submit-container">
+					<textarea id="comments" rows="4" cols="20">Do you have any further suggestions?</textarea>
+					<input type="submit" id="submit" value="submit" />
+				</div>
+			</form>
+		</aside>
+	
+		<footer>
+			<ul class="links-container">
+				<li><a target="_blank" href="https://musica-erudita.netlify.app/">A Música Erudita</a> </li>
+				<li><a target="_blank" href="https://musica-erudita.netlify.app/coral-historico.html">Pequeno Histórico da Música Erudita</a> </li>
+				<li><a target="blank" href="https://musica-erudita.netlify.app/coral-mundo.html">A Música Erudita no Mundo</a></li>
+				<li><a target="_blank" href="https://musica-erudita.netlify.app/coral-brasil.html">A Música Erudita no Brasil</a></li>
+				<li><a target="_blank" href="https://musica-erudita.netlify.app/coral-historico-vozes.html">As Vozes no Coral Sinfônico</a></li>
+			</ul>
+		</footer>
+	
+	</div>
+	
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
